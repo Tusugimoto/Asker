@@ -339,6 +339,13 @@ class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         }
     }
 
+    func starButtonFunc(){
+        
+    }
+    
+    func trashButtonFunc(){
+        
+    }
 
     
 }
