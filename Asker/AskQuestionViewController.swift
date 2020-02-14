@@ -9,6 +9,9 @@ import UIKit
 import RealmSwift
 import AVFoundation
 
+////ランダムにときに質問を入れる変数
+//var shuffled: [Question] = []
+
 class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     //質問の番号を表示するラベル
     @IBOutlet weak var questionNumberLabel: UILabel!
@@ -39,9 +42,6 @@ class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     //ストップウォッチ関連
     var myTimer = Timer()
     var TimerDisplayed:float_t = 0
-    
-    //ランダムにときに質問を入れる変数
-    var shuffled: [Question] = []
     
     //質問数のカウント
     var count:Int = 0
@@ -127,6 +127,7 @@ class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAu
             //録音をストップ
             audioRecorder.stop()
             isRecording = false
+            timerStop()
             playButton.isEnabled = true
 
             //recordの画像をstopに変更
@@ -136,6 +137,22 @@ class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAu
 
             //playボタンを有効化
             playButton.isEnabled = true
+            
+           //isAudioを変更
+            var search: Question?
+
+            if randomFlag{
+                search = realm.objects(Question.self).filter("content == %@", shuffled[count].content!).first
+            }else{
+                search = realm.objects(Question.self).filter("content == %@", results[count].content!).first
+            }
+            try! realm.write {
+                search?.isAudio = true
+            }
+            //ゴミ箱を有効化
+            trashButton.isEnabled = true
+        
+            
         }
     }
     
@@ -219,7 +236,7 @@ class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAu
             let state = UIControl.State.normal
             playButton.setImage(image, for: state)
             
-            //rrecordボタンを有効化
+            //recordボタンを有効化
             recordButton.isEnabled = true
         }
         
@@ -340,11 +357,101 @@ class AskQuestionViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     }
 
     func starButtonFunc(){
-        
+        var search: Question?
+        //        スターを変更
+        if(randomFlag){
+            search = realm.objects(Question.self).filter("content == %@", shuffled[count].content!).first
+        }else{
+            search = realm.objects(Question.self).filter("content == %@", results[count].content!).first
+        }
+        if search?.star == false{
+            try! realm.write {
+                search?.star = true
+            }
+        }else{
+            try! realm.write {
+                search?.star = false
+            }
+        }
+        starCheck()
     }
     
     func trashButtonFunc(){
-        
+        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "本当に削除しますか？", preferredStyle: .alert)
+
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            //        isAudioを変更
+            var search: Question?
+            if randomFlag{
+                search = realm.objects(Question.self).filter("content == %@", shuffled[self.count].content!).first
+            }else{
+                search = realm.objects(Question.self).filter("content == %@", results[self.count].content!).first
+            }
+            try! realm.write {
+                search?.isAudio = false
+            }
+
+            self.trashButton.isEnabled = false
+            self.playButton.isEnabled = false
+            self.timerReset()
+        })
+        // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+                print("Cancel")
+            })
+            alert.addAction(cancelAction)
+            alert.addAction(defaultAction)
+
+            present(alert, animated: true, completion: nil)
+
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //trashボタンの無効化、有効か
+        isAudioFile()
+        //スターフラグが立っているとき、スター付きの質問だけを呼び出す処理
+        if starOnlyFlag {
+            results = realm.objects(Question.self).filter("star  ==  true")
+        }
+
+//        //質問をシャッフル
+//        if randomFlag {
+//            shuffled = results.shuffled()
+//        }
+
+        //最初の質問を表示
+        if count < results.count {
+            if randomFlag{
+                questionLabel.text = shuffled[count].content
+                starCheck()
+            }else{
+                questionLabel.text = results[count].content
+                starCheck()
+            }
+        }
+
+        //backボタンの無効化
+        if count <= 0 {
+            backButton.isEnabled = false
+        }else{
+            backButton.isEnabled = true
+        }
+
+        //質問番号の表示
+        questionNumberLabel.text = String(count+1)
+
+        //オーディオファイルのチェック
+        if isAudioFile(){
+            playButton.isEnabled = true
+        }else{
+            playButton.isEnabled = false
+        }
+
     }
 
     

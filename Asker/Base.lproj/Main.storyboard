@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9n-9f-ofR" userLabel="PlayButton">
-                                <rect key="frame" x="155" y="555" width="104" height="104"/>
+                                <rect key="frame" x="155" y="619" width="104" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="8cW-qQ-Nyf"/>
                                     <constraint firstAttribute="width" constant="104" id="nqH-Hm-jEa"/>
@@ -183,7 +183,7 @@
                                 <state key="normal" image="PlayOn"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B13-4e-AA9" userLabel="TrashButton">
-                                <rect key="frame" x="352" y="133" width="28" height="35"/>
+                                <rect key="frame" x="352" y="69" width="28" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="MRk-AY-5lj"/>
                                     <constraint firstAttribute="height" constant="35" id="RKS-cP-djI"/>
@@ -207,17 +207,17 @@
                                 <state key="normal" image="BackOn"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Box" translatesAutoresizingMaskIntoConstraints="NO" id="DGg-IN-JlG" userLabel="QBox">
-                                <rect key="frame" x="11.5" y="191" width="391" height="185"/>
+                                <rect key="frame" x="11.5" y="127" width="391" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="391" id="6uc-qL-MKd"/>
                                     <constraint firstAttribute="height" constant="185" id="dfQ-TA-8Zy"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boss" translatesAutoresizingMaskIntoConstraints="NO" id="BaP-Mm-b3r">
-                                <rect key="frame" x="180" y="384" width="54.5" height="128"/>
+                                <rect key="frame" x="152.5" y="320" width="109" height="256"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBh-ES-vat" userLabel="QuestionNum">
-                                <rect key="frame" x="21" y="117" width="63" height="66"/>
+                                <rect key="frame" x="21" y="53" width="63" height="66"/>
                                 <color key="backgroundColor" red="0.99852734799999998" green="0.84144073720000001" blue="0.63918489219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -250,7 +250,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coV-SD-kCB" userLabel="QuestionLabel">
-                                <rect key="frame" x="20" y="191" width="374" height="113"/>
+                                <rect key="frame" x="20" y="127" width="374" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="E70-MF-qrn"/>
                                     <constraint firstAttribute="width" constant="374" id="FQT-kg-Wu1"/>
@@ -309,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oo-h3-LPN" userLabel="TrashButton">
-                                <rect key="frame" x="351" y="133" width="28" height="35"/>
+                                <rect key="frame" x="351" y="69" width="28" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="GWZ-Ln-0yd"/>
                                     <constraint firstAttribute="width" constant="28" id="dBY-a9-Ric"/>
@@ -333,17 +333,17 @@
                                 <state key="normal" image="BackOn"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Box" translatesAutoresizingMaskIntoConstraints="NO" id="0Ss-25-HV6" userLabel="QBox">
-                                <rect key="frame" x="11.5" y="191" width="391" height="185"/>
+                                <rect key="frame" x="11.5" y="127" width="391" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="391" id="3To-qz-xww"/>
                                     <constraint firstAttribute="height" constant="185" id="IH4-K9-dIn"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boss" translatesAutoresizingMaskIntoConstraints="NO" id="NnB-6i-792">
-                                <rect key="frame" x="180" y="384" width="54.5" height="128"/>
+                                <rect key="frame" x="152.5" y="320" width="109" height="256"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fu-VA-Ffq" userLabel="QuestionNum">
-                                <rect key="frame" x="20" y="117" width="63" height="66"/>
+                                <rect key="frame" x="20" y="53" width="63" height="66"/>
                                 <color key="backgroundColor" red="0.99852734799999998" green="0.84144073720000001" blue="0.63918489219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -376,7 +376,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWC-bJ-jYI" userLabel="QuestionLabel">
-                                <rect key="frame" x="20" y="191" width="374" height="113"/>
+                                <rect key="frame" x="20" y="127" width="374" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="NYI-dL-0FC"/>
                                     <constraint firstAttribute="height" constant="113" id="q3v-MN-8ec"/>
@@ -394,7 +394,7 @@
                                 <state key="normal" image="NextOn"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-XI-MmV" userLabel="RecButton">
-                                <rect key="frame" x="84" y="555" width="104" height="104"/>
+                                <rect key="frame" x="84" y="619" width="104" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="Idh-Ij-Jav"/>
                                     <constraint firstAttribute="height" constant="104" id="sag-zt-TRI"/>
@@ -402,7 +402,7 @@
                                 <state key="normal" image="RecordOn"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dz-jM-zbT" userLabel="PlayButton">
-                                <rect key="frame" x="226" y="555" width="104" height="104"/>
+                                <rect key="frame" x="226" y="619" width="104" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="UkD-Ym-Yix"/>
                                     <constraint firstAttribute="width" constant="104" id="sej-nn-XoF"/>
@@ -591,7 +591,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ocr-zM-uV2" userLabel="PlayButton">
-                                <rect key="frame" x="226" y="555" width="104" height="104"/>
+                                <rect key="frame" x="226" y="619" width="104" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="21g-bi-kOp"/>
                                     <constraint firstAttribute="height" constant="104" id="BCC-lH-fZa"/>
@@ -602,7 +602,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nml-Aq-aad" userLabel="RecButton">
-                                <rect key="frame" x="84" y="555" width="104" height="104"/>
+                                <rect key="frame" x="84" y="619" width="104" height="104"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="Dwg-aJ-aeZ"/>
                                     <constraint firstAttribute="width" constant="104" id="tce-Cg-QMM"/>
@@ -613,7 +613,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-Eu-Chv" userLabel="TrashButton">
-                                <rect key="frame" x="351" y="133" width="28" height="35"/>
+                                <rect key="frame" x="351" y="69" width="28" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28" id="D0u-V5-OpB"/>
                                     <constraint firstAttribute="height" constant="35" id="XEP-Gm-Sr8"/>
@@ -647,17 +647,17 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Box" translatesAutoresizingMaskIntoConstraints="NO" id="heQ-xD-OeZ" userLabel="QBox">
-                                <rect key="frame" x="11.5" y="191" width="391" height="185"/>
+                                <rect key="frame" x="11.5" y="127" width="391" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="391" id="DO7-OU-hE7"/>
                                     <constraint firstAttribute="height" constant="185" id="gfr-zV-nBx"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boss" translatesAutoresizingMaskIntoConstraints="NO" id="IUT-5U-OcG">
-                                <rect key="frame" x="180" y="384" width="54.5" height="128"/>
+                                <rect key="frame" x="152.5" y="320" width="109" height="256"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-ZP-nkZ" userLabel="QuestionNum">
-                                <rect key="frame" x="20" y="117" width="63" height="66"/>
+                                <rect key="frame" x="20" y="53" width="63" height="66"/>
                                 <color key="backgroundColor" red="0.99852734799999998" green="0.84144073720000001" blue="0.63918489219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -690,7 +690,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-XK-Ala" userLabel="QuestionLabel">
-                                <rect key="frame" x="20" y="191" width="374" height="113"/>
+                                <rect key="frame" x="20" y="127" width="374" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="6k1-TB-9eH"/>
                                     <constraint firstAttribute="height" constant="113" id="SvQ-sy-xk2"/>

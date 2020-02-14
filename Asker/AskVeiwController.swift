@@ -12,7 +12,8 @@ import RealmSwift
 //realmのインスタンス生成
 let realm = try! Realm()
 //relamの取得
-let results = realm.objects(Question.self)
+var results = realm.objects(Question.self)
+var shuffled = results.shuffled()
 //質問の数
 var questionNumber:Int = results.count
 
@@ -63,6 +64,8 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 numberChange()
     //        スタースイッチがオフならスターフラグをfalseにして質問数を更新
             }else {
+                //Questionを再取得
+                results = realm.objects(Question.self)
                 starOnlyFlag = false
                 numberChange()
             }
@@ -72,15 +75,18 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 //    スタースイッチが押された時に質問数を更新する関数
     func numberChange() {
         if starOnlyFlag{
-            numberSlider.maximumValue = Float(results.filter("star == true").count)
-            numberSlider.setValue(Float(results.filter("star == true").count), animated: false)
-            displayNumber.text = String(results.filter("star == true").count)
-            questionNumber = results.filter("star == true").count
+            let starResults = realm.objects(Question.self).filter("star == true")
+            numberSlider.maximumValue = Float(starResults.count)
+            numberSlider.setValue(Float(starResults.count), animated: false)
+            displayNumber.text = String(starResults.count)
+            questionNumber = starResults.count
+            print(questionNumber)
         }else{
             numberSlider.maximumValue = Float(results.count)
             numberSlider.setValue(Float(results.count), animated: false)
             displayNumber.text = String(results.count)
             questionNumber = results.count
+            print(questionNumber)
         }
     }
     
@@ -100,13 +106,25 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(dataSourceOrder[row])
     }
+    
+    //順番が変更されたときに各フラグを立てる
+    func pickerView(_ pickerView: UIPickerView,didSelectRow row: Int,inComponent component: Int) {
+        if dataSourceOrder[row] == "ランダム"{
+            randomFlag = true
+            orderFlag = false
+            shuffled = results.shuffled()
+        }else {
+            randomFlag = false
+            orderFlag = true
+        }
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-    //        スライダーの初期値
+        //スライダーの初期値
         displayNumber.text = "\(results.count)"
         
         numberChange()
@@ -114,8 +132,8 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         self.orderPickerView.dataSource = self
         self.orderPickerView.delegate = self
         
-    //        realmのパスを表示
-      print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //realmのパスを表示
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
        
     }
