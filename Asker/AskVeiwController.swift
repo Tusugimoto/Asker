@@ -124,10 +124,6 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //スライダーの初期値
-        displayNumber.text = "\(results.count)"
-        
-        numberChange()
         
         self.orderPickerView.dataSource = self
         self.orderPickerView.delegate = self
@@ -152,6 +148,10 @@ class AskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             // 2回目以降の起動では「firstLaunch」のkeyをfalseに
             ud.set(false, forKey: "firstLaunch")
         }
+        
+        //スライダーの初期値
+        displayNumber.text = "\(results.count)"
+        numberChange()
     }
 
     
